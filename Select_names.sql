@@ -29,3 +29,10 @@
 
  SELECT name FROM world
  WHERE name LIKE '____'
+
+/*HARD ASPECT OF THE TEST OPTIONAL*/
+
+-- return where name is spelled the same as capital
+ SELECT name
+  FROM world
+ WHERE name LIKE capital
