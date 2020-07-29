@@ -26,3 +26,6 @@
 
  SELECT name FROM world
  WHERE name LIKE '%o__o%'
+
+ SELECT name FROM world
+ WHERE name LIKE '____'
