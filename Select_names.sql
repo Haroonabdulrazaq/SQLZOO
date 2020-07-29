@@ -37,7 +37,11 @@
   FROM world
  WHERE name LIKE capital
 
--- return where capital is spelled the same as  countryname + City 
+-- return where capital is spelled the same as  country  + the word City 
  SELECT name
   FROM world
  WHERE capital LIKE concat(name,' City')
+
+ SELECT capital, name
+  FROM world
+ WHERE capital LIKE name OR capital LIKE concat(name,' City') OR capital LIKE concat(name,'%','%') 
