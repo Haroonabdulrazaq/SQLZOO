@@ -44,4 +44,9 @@
 -- Find the capital and the name where the capital includes the name of the country.
  SELECT capital, name
   FROM world
- WHERE capital LIKE name OR capital LIKE concat(name,' City') OR capital LIKE concat(name,'%','%') 
+  WHERE capital LIKE concat(name, '%')   
+
+--Find the capital and the name where the capital is an extension of name of the country.
+   SELECT capital, name
+  FROM world
+  WHERE capital NOT LIKE name AND capital LIKE concat(name, '%')  
