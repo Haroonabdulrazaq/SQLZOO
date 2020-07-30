@@ -25,3 +25,6 @@ SELECT yr, subject, winner
                   'Jimmy Carter',
                    'Barack Obama'
 )
+
+SELECT winner FROM nobel
+ WHERE winner LIKE 'John %' 
