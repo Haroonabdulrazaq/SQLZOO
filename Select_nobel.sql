@@ -50,3 +50,7 @@ WHERE winner = 'PETER GRÜNBERG'
 SELECT *
 FROM nobel
 WHERE winner = 'EUGENE O\'NEILL'
+
+SELECT winner, yr, subject 
+FROM nobel
+WHERE winner LIKE 'Sir %' ORDER BY yr DESC, winner ASC
