@@ -46,3 +46,7 @@ WHERE (subject ='Medicine' AND yr < 1910) OR
 SELECT *
 FROM nobel
 WHERE winner = 'PETER GRÜNBERG'
+
+SELECT *
+FROM nobel
+WHERE winner = 'EUGENE O\'NEILL'
