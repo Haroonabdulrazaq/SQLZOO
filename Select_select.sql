@@ -25,4 +25,7 @@ WHERE population > (
                    SELECT population
                    FROM world
                    WHERE name='Poland')
+
+   SELECT name, concat(ROUND(100*population/(SELECT population FROM world WHERE name= 'Germany'),0),'%') As 'percentage'
+FROM world WHERE continent ='Europe'
                
