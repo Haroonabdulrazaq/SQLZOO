@@ -3,7 +3,14 @@ SELECT name FROM world
      (SELECT population FROM world
       WHERE name='Romania')
 
-      SELECT name FROM world
+SELECT name FROM world
 WHERE continent='Europe' AND gdp/population >(
 SELECT gdp/population FROM world
-WHERE name = 'United Kingdo
+WHERE name = 'United Kingdom')
+
+SELECT name, continent
+FROM world
+WHERE 
+continent IN (SELECT continent 
+      FROM world
+      WHERE name = 'Australia' OR name = 'Argentina') ORDER BY name
