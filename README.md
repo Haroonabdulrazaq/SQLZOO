@@ -1,2 +1,2 @@
 # SQLZOO
-Database Project using MySql
+Database Project using MySql, taking challenges from SQLZOO
