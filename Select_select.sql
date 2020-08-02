@@ -33,5 +33,11 @@ SELECT name
 FROM world
 WHERE gdp > ALL (SELECT gdp
  FROM world
+
+ SELECT continent, name, population FROM world x
+  WHERE population >= ALL
+    (SELECT population FROM world y
+        WHERE y.continent=x.continent
+          AND population>0)
  WHERE continent= 'Europe' AND gdp > 0 )  
                
