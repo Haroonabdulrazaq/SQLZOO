@@ -32,7 +32,7 @@ FROM world WHERE continent ='Europe'
 SELECT name
 FROM world
 WHERE gdp > ALL (SELECT gdp
- FROM world
+ FROM world WHERE )
 
 SELECT continent, name, area FROM world x
   WHERE area >= ALL
@@ -40,3 +40,8 @@ SELECT continent, name, area FROM world x
         WHERE y.continent=x.continent
           AND area>=0) 
                
+               SELECT continent, name FROM world x
+  WHERE name <= ALL
+    (SELECT name FROM world y
+        WHERE y.continent = x.continent
+          AND area>=0)
