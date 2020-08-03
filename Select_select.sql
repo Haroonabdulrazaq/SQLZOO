@@ -45,3 +45,10 @@ SELECT continent, name FROM world x
   WHERE name <= ALL
     (SELECT name FROM world y
         WHERE y.continent = x.continent)
+
+        SELECT name, continent, population
+FROM world 
+WHERE continent NOT IN
+     (SELECT DISTINCT continent
+      FROM world
+      WHERE population > 25000000)
