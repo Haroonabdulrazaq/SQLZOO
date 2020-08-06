@@ -12,3 +12,7 @@ WHERE teamid ='GER'
 SELECT team1, team2, player
 FROM game JOIN goal ON (id=matchid)
 WHERE player LIKE 'Mario%'
+
+SELECT player, teamid, coach, gtime
+  FROM goal JOIN eteam ON (teamid=id)
+ WHERE gtime<=10
