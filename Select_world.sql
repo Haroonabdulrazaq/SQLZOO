@@ -37,4 +37,5 @@ WHERE LEFT(name,1) LIKE LEFT(capital,1) AND name <> capital
 
 SELECT name
    FROM world
-WHERE name LIKE '%o%a%i%ue%'
+WHERE name LIKE '%o%a%i%ue%' 
+--Finished
