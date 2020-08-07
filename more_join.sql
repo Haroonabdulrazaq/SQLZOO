@@ -57,3 +57,46 @@ ON actor.id = actorid
 INNER JOIN movie
 ON movie.id = movieid
 WHERE yr = 1962 AND ord =1
+
+SELECT yr,COUNT(title) FROM
+  movie JOIN casting ON movie.id=movieid
+        JOIN actor   ON actorid=actor.id
+WHERE name='Rock Hudson'
+GROUP BY yr
+HAVING COUNT(title) > 2
+
+SELECT title, name 
+FROM movie JOIN casting 
+ON (movie.id = movieid AND ord=1)
+JOIN actor ON (actor.id = actorid)
+WHERE movie.id IN(SELECT movieid 
+FROM casting WHERE actorid IN(
+SELECT actor.id FROM actor
+WHERE name ='Julie Andrews'
+))
+
+SELECT name FROM
+actor JOIN casting ON(actor.id= actorid)
+WHERE ord=1
+GROUP BY name
+HAVING COUNT(actorid)>=15
+ORDER BY name
+
+SELECT title, COUNT(actorid)
+FROM casting
+JOIN movie ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE yr = 1978
+GROUP BY title
+ORDER BY COUNT(actorid) DESC, title
+
+SELECT name
+FROM casting
+JOIN movie ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE movieid IN (SELECT movieid 
+FROM casting
+JOIN movie ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE name =  'Art Garfunkel'
+) AND name !=  'Art Garfunkel';
