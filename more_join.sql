@@ -74,3 +74,10 @@ FROM casting WHERE actorid IN(
 SELECT actor.id FROM actor
 WHERE name ='Julie Andrews'
 ))
+
+SELECT name FROM
+actor JOIN casting ON(actor.id= actorid)
+WHERE ord=1
+GROUP BY name
+HAVING COUNT(actorid)>=15
+ORDER BY name
