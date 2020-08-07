@@ -26,3 +26,11 @@ ON actor.id = actorid
 INNER JOIN movie
 ON movie.id = movieid
 WHERE movieid = 11768
+
+SELECT name 
+FROM actor
+INNER JOIN casting 
+ON actor.id = actorid
+INNER JOIN movie
+ON movie.id = movieid
+WHERE title = 'Alien'
