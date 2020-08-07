@@ -30,10 +30,10 @@ FROM world
 GROUP BY continent
 HAVING SUM(population) >= 100000000
 
-SELECT DISTINCT player 
-  FROM game JOIN goal ON id=matchid
-    WHERE teamid!='GER' AND (team1='GER' XOR team2='GER')
 
-SELECT teamname, COUNT(gtime)
-FROM eteam JOIN goal ON id=teamid
- GROUP BY teamname
+
+
+
+ SELECT stadium, COUNT(gtime)
+FROM game JOIN goal ON (id=matchid)
+GROUP BY stadium
