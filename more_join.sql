@@ -14,3 +14,7 @@ ORDER BY yr
 SELECT id
  FROM actor
  WHERE name='Glenn Close' 
+
+ SELECT id
+ FROM movie
+ WHERE title = 'Casablanca' 
