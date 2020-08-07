@@ -81,3 +81,11 @@ WHERE ord=1
 GROUP BY name
 HAVING COUNT(actorid)>=15
 ORDER BY name
+
+SELECT title, COUNT(actorid)
+FROM casting
+JOIN movie ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE yr = 1978
+GROUP BY title
+ORDER BY COUNT(actorid) DESC, title
