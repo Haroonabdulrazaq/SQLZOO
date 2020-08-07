@@ -42,3 +42,11 @@ ON movie.id = movieid
 INNER JOIN actor
 ON actor.id = actorid
 WHERE name = 'Harrison Ford' 
+
+SELECT title 
+FROM movie
+INNER JOIN casting 
+ON movie.id = movieid
+INNER JOIN actor
+ON actor.id = actorid
+WHERE name = 'Harrison Ford' AND ord !=1
