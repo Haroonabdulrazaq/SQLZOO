@@ -29,11 +29,3 @@ SELECT continent
 FROM world
 GROUP BY continent
 HAVING SUM(population) >= 100000000
-
-
-
-
-
- SELECT stadium, COUNT(gtime)
-FROM game JOIN goal ON (id=matchid)
-GROUP BY stadium

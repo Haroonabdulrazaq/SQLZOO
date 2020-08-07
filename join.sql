@@ -32,3 +32,7 @@ SELECT DISTINCT player
 SELECT teamname, COUNT(gtime)
 FROM eteam JOIN goal ON id=teamid
  GROUP BY teamname
+
+SELECT stadium, COUNT(gtime)
+FROM game JOIN goal ON (id=matchid)
+GROUP BY stadium
