@@ -89,3 +89,14 @@ JOIN actor   ON actorid=actor.id
 WHERE yr = 1978
 GROUP BY title
 ORDER BY COUNT(actorid) DESC, title
+
+SELECT name
+FROM casting
+JOIN movie ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE movieid IN (SELECT movieid 
+FROM casting
+JOIN movie ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE name =  'Art Garfunkel'
+) AND name !=  'Art Garfunkel';
